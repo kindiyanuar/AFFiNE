@@ -22,6 +22,8 @@ services:
 
   affine_migration:
     image: ghcr.io/toeverything/affine:${AFFINE_REVISION:-stable}
+    restart: "no"
+    exclude_from_hc: true
     volumes:
       - affine-storage:/root/.affine/storage
       - affine-config:/root/.affine/config
